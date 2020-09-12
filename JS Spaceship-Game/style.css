@@ -1,0 +1,130 @@
+body {
+    font-size: 32px;
+    font-family:'spaceranger';
+}
+  
+  #game-area {
+    position: relative;
+    background: url('./png/background.png');
+    width: 100%;
+    height: 93vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #game-start {
+    position: absolute;
+    width: 30%;
+    background-color: rgb(235, 253, 153);
+    border-radius: 30px;
+    top: 100px;
+    left: 35%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+    font-family:'spaceranger';
+    font-size:30px;
+  }
+
+  #game-score {
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  #game-title {
+    position: absolute;
+    width: 25%;
+    top: 200px;
+    left: 35%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+    font-size: 90px;
+    color:#E9E9E9;
+  }
+  
+  #spaceship {
+    z-index: 50;
+    position: absolute;
+    width: 140px;
+    height: 56px;
+    background-image: url('./png/spaceship.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+  }
+  
+  #spaceship.spaceship-fire {
+    background-image: url('./png/spaceship.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .fire-ball {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    background-image: url('./png/Bullet (1).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .asteroid {
+    z-index: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('./png/asteroid.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .spacestation {
+    z-index: 0;
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    background-image: url('./png/satelite-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .enemy {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('./png/Bug/mosquito.png');
+    background-size: cover;
+  }
+  
+  .explosion {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('./png/explosion.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  #game-over {
+    position: absolute;
+    width: 50%;
+    background-color: red;
+    top: 410px;
+    left: 23%;
+    z-index: 100;
+    text-align: center;
+    padding: 30px;
+  }
+  @font-face { 
+    font-family:'spaceranger';  src: url('./space-ranger-font/spaceranger.ttf') format('truetype');
+  }    
+  
+  #game-section {
+    font-family:'spaceranger';
+  }

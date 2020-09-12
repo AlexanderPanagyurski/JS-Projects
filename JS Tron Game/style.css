@@ -1,0 +1,197 @@
+body {
+    font-size: 32px;
+    font-family:'Tron';
+    text-shadow: 0 0 10px #29aaf5, 0 0 5px #29aaf5;
+    color:#E9E9E9;
+}
+
+#game-area {
+    position: relative;
+    background: url('./png/background.jpg');
+    width: 100%;
+    height: 88vh;
+    margin: 0;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#game-start {
+    position: absolute;
+    width: 30%;
+    background-color:	rgb(114, 140, 184);
+    border:none;
+    background-color: unset;
+    top: 90px;
+    left: 36%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+    font-family:'Tron';
+    font-size:30px;
+    text-shadow: 0 0 10px #29aaf5, 0 0 5px #29aaf5;
+    color:#E9E9E9;
+  }
+
+  #game-score {
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+  #blue-bike-right {
+    z-index: 50;
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./png/bikes/tron-blue-bike-right.png');
+  }
+  #blue-bike-right.blue-bike-left {
+    z-index: 50;
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./png/bikes/tron-blue-bike-left.png');
+  }
+  #blue-bike-right.blue-bike-up {
+    z-index: 50;
+    position: absolute;
+    width: 28px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./png/bikes/tron-blue-bike-up.png');
+  }
+  #blue-bike-right.blue-bike-down {
+    z-index: 50;
+    position: absolute;
+    width: 28px;
+    height: 70px;
+    background-image: url('./png/bikes/tron-blue-bike-down.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .blue-trail{
+    z-index: 50;
+    position: absolute;
+    background-color:#53B5CE;
+    height: 10px;
+    width: 10px;
+  }
+
+  .yellow-trail {
+    z-index: 50;
+    position: absolute;
+    background-color:#FE9C00;
+    height: 10px;
+    width: 10px;
+  }
+
+  #yellow-bike-left {
+    z-index: 50;
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    background-image: url('./png/bikes/tron-yellow-bike-left.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #yellow-bike-left.yellow-bike-right{
+    z-index: 50;
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    background-image: url('./png/bikes/tron-yellow-bike-right.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #yellow-bike-left.yellow-bike-up {
+    z-index: 50;
+    position: absolute;
+    width: 28px;
+    height: 70px;
+    background-image: url('./png/bikes/tron-yellow-bike-up.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #yellow-bike-left.yellow-bike-down {
+    z-index: 50;
+    position: absolute;
+    width: 28px;
+    height: 70px;
+    background-image: url('./png/bikes/tron-yellow-bike-down.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #tron-avatar {
+    position: absolute;
+    background-image: url('./png/avatars/tron.png');
+    top: 100px;
+    left: 6%;
+    z-index: 100;
+    text-align: center;
+    width: 123px;
+    height: 425px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #clu-avatar {
+    position: absolute;
+    background-image: url('./png/avatars/clu.png');
+    top: 100px;
+    left: 86%;
+    z-index: 100;
+    text-align: center;
+    width: 123px;
+    height: 425px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+#game-title {
+    position: absolute;
+    width: 25%;
+    top: 210px;
+    left: 34%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+    font-size: 90px;
+    color:#E9E9E9;
+    text-shadow: 0 0 10px #29aaf5, 0 0 5px #29aaf5;
+    
+  }
+  
+.hidden {
+    display: none;
+}
+
+#game-over {
+    position: absolute;
+    width: 50%;
+    background-color: red;
+    top: 410px;
+    left: 23%;
+    z-index: 100;
+    text-align: center;
+    padding: 30px;
+    color:#E9E9E9;
+  }
+
+
+
+  @font-face { 
+    font-family:'Tron';  src: url('./tron-font/TRON.TTF') format('truetype');
+  }    
+  
+  #game-section {
+    font-family:'Tron';
+  }
