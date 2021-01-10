@@ -111,6 +111,14 @@ body {
     background-size: cover;
 }
 
+.missile {
+    position: absolute;
+    width: 300px;
+    height: 56px;
+    background-image: url('./png/missile.png');
+    background-size: cover;
+}
+
 .explosion {
     position: absolute;
     width: 100px;
