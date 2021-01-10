@@ -14,10 +14,14 @@
         speed: 2,
         spaceshipMovingMultiplier: 2.1,
         fireballMovingMultiplier: 10,
+        spacestationMultiplier: 2,
+        galaxyMultiplier: 1.1,
+        enemyMultiplier: 3,
         asteroidMultiplier: 4,
         fireInterval: 200,
         asteroidSpanInterval: 3000,
         spacestationSpanInterval: 6000,
+        galaxySpanInterval: 10000,
         enemySpanInterval: 8000,
         asteroidKillScore: 1000,
         enemyKillScore: 2000
@@ -57,6 +61,9 @@
         },
         get enemies() {
             return Array.from(document.querySelectorAll('.enemy'));
+        },
+        get galaxies() {
+            return Array.from(document.querySelectorAll('.galaxy'));
         }
     }
 
@@ -93,7 +100,8 @@
             lastFireBallTimestamp: 0,
             lastSpacestationTimestamp: 0,
             lastAsteroidTimestamp: 0,
-            lastEnemyTimestamp: 0
+            lastEnemyTimestamp: 0,
+            lastGalaxyTimestamp: 0
         };
     }
     let gameplay;
@@ -134,6 +142,7 @@
     const addSpacestation = addGameElementFactory('spacestation');
     const addAsteroid = addGameElementFactory('asteroid');
     const addEnemy = addGameElementFactory('enemy');
+    const addGalaxy = addGameElementFactory('galaxy');
 
     const pressedKeyActionMap = {
         ArrowUp() {
@@ -192,6 +201,7 @@
     }
 
     function processGameElementFactory(
+        speedMultiplier,
         addFn,
         elementWidth,
         gameplayTimestampName,
@@ -207,7 +217,7 @@
                 gameplay[gameplayTimestampName] = timestamp;
             }
             scene[sceneName].forEach(ce => {
-                const newX = utils.pxToNumber(ce.style.left) - config.speed * config.asteroidMultiplier;
+                const newX = utils.pxToNumber(ce.style.left) - config.speed * speedMultiplier;
                 if (additionalElementProcessor && additionalElementProcessor(ce)) { return; }
                 if (newX + 200 < 0) { ce.remove(); }
                 ce.style.left = utils.numberToPx(newX);
@@ -250,11 +260,13 @@
     }
 
 
-    const processSpacestations = processGameElementFactory(addSpacestation, 200, 'lastSpacestationTimestamp', 'spacestations', 'spacestationSpanInterval');
+    const processSpacestations = processGameElementFactory(config.spacestationMultiplier, addSpacestation, 200, 'lastSpacestationTimestamp', 'spacestations', 'spacestationSpanInterval');
 
-    const processAsteroids = processGameElementFactory(addAsteroid, 60, 'lastAsteroidTimestamp', 'asteroids', 'asteroidSpanInterval', asteroidElementProcessor);
+    const processGalaxies = processGameElementFactory(config.galaxyMultiplier, addGalaxy, 200, 'lastGalaxyTimestamp', 'galaxies', 'galaxySpanInterval');
 
-    const processEnemies = processGameElementFactory(addEnemy, 60, 'lastEnemyTimestamp', 'enemies', 'enemySpanInterval', enemyElementProcessor);
+    const processAsteroids = processGameElementFactory(config.asteroidMultiplier, addAsteroid, 60, 'lastAsteroidTimestamp', 'asteroids', 'asteroidSpanInterval', asteroidElementProcessor);
+
+    const processEnemies = processGameElementFactory(config.enemyMultiplier, addEnemy, 60, 'lastEnemyTimestamp', 'enemies', 'enemySpanInterval', enemyElementProcessor);
 
 
     function gameLoop(timestamp) {
@@ -264,7 +276,8 @@
         processFireBalls(timestamp);
         processAsteroids(timestamp * config.asteroidMultiplier);
         processSpacestations(timestamp);
-        processEnemies(timestamp * config.asteroidMultiplier);
+        processEnemies(timestamp);
+        processGalaxies(timestamp);
 
         gameScoreValueEl.innerText++;
     }

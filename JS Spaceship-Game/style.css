@@ -83,6 +83,16 @@ body {
     background-repeat: no-repeat;
 }
 
+.galaxy {
+    z-index: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('./png/galaxy.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .spacestation {
     z-index: 0;
     position: absolute;
