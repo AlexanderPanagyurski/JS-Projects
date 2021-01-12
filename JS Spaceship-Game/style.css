@@ -93,6 +93,16 @@ body {
     background-repeat: no-repeat;
 }
 
+.star {
+    z-index: 0;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-image: url('./png/star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .spacestation {
     z-index: 0;
     position: absolute;

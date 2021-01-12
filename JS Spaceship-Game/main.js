@@ -16,6 +16,7 @@
         fireballMovingMultiplier: 10,
         spacestationMultiplier: 2,
         galaxyMultiplier: 1.1,
+        starMultiplier: 5,
         enemyMultiplier: 3,
         asteroidMultiplier: 4,
         missileMultipler: 8,
@@ -23,6 +24,7 @@
         asteroidSpanInterval: 3000,
         spacestationSpanInterval: 6000,
         galaxySpanInterval: 10000,
+        starSpanInterval: 1000,
         enemySpanInterval: 8000,
         missileSpanInterval: 10000,
         asteroidKillScore: 1000,
@@ -69,6 +71,9 @@
         },
         get missiles() {
             return Array.from(document.querySelectorAll('.missile'));
+        },
+        get stars() {
+            return Array.from(document.querySelectorAll('.star'));
         }
     }
 
@@ -108,6 +113,7 @@
             lastEnemyTimestamp: 0,
             lastGalaxyTimestamp: 0,
             lastMissleTimestamp: 0,
+            lastStarTimestamp: 0
         };
     }
     let gameplay;
@@ -150,6 +156,7 @@
     const addEnemy = addGameElementFactory('enemy');
     const addGalaxy = addGameElementFactory('galaxy');
     const addMissile = addGameElementFactory('missile');
+    const addStar = addGameElementFactory('star');
 
     const pressedKeyActionMap = {
         ArrowUp() {
@@ -288,6 +295,8 @@
 
     const processGalaxies = processGameElementFactory(config.galaxyMultiplier, addGalaxy, 200, 'lastGalaxyTimestamp', 'galaxies', 'galaxySpanInterval');
 
+    const processStars = processGameElementFactory(config.starMultiplier, addStar, 200, 'lastStarTimestamp', 'stars', 'starSpanInterval');
+
     const processAsteroids = processGameElementFactory(config.asteroidMultiplier, addAsteroid, 60, 'lastAsteroidTimestamp', 'asteroids', 'asteroidSpanInterval', asteroidElementProcessor);
 
     const processEnemies = processGameElementFactory(config.enemyMultiplier, addEnemy, 60, 'lastEnemyTimestamp', 'enemies', 'enemySpanInterval', enemyElementProcessor);
@@ -305,6 +314,7 @@
         processEnemies(timestamp);
         processGalaxies(timestamp);
         processMissiles(timestamp);
+        processStars(timestamp * config.starMultiplier);
 
         gameScoreValueEl.innerText++;
     }
