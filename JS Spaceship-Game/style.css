@@ -115,7 +115,7 @@ body {
 
 .enemy {
     position: absolute;
-    width: 180px;
+    width: 195px;
     height: 56px;
     background-image: url('./png/alien-spaceship.png');
     background-size: cover;

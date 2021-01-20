@@ -7,6 +7,7 @@
     const gameAreaEl = document.getElementById('game-area');
     const gameOverEl = document.getElementById('game-over');
     const spaceshipEl = document.getElementById('spaceship');
+    let audio = new Audio('music/WBA Free Track - Junkie.mp3');
 
     const pressedKeys = new Set();
 
@@ -305,6 +306,7 @@
 
 
     function gameLoop(timestamp) {
+        audio.play();
         gameplay.loopId = window.requestAnimationFrame(gameLoop);
         processPressedKeys(timestamp);
         processNextRenderQueue(timestamp);
