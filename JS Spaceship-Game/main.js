@@ -7,7 +7,7 @@
     const gameAreaEl = document.getElementById('game-area');
     const gameOverEl = document.getElementById('game-over');
     const spaceshipEl = document.getElementById('spaceship');
-    let audio = new Audio('music/WBA Free Track - Junkie.mp3');
+    let audio = null;
 
     const pressedKeys = new Set();
 
@@ -251,6 +251,7 @@
         }
         if (utils.hasCollision(asteroidEl, spaceshipEl)) {
             asteroidEl.classList.add("explosion", setTimeout(function() { asteroidEl.remove(); }, 100));
+            audio.src="";
             gameOver();
             return true;
         }
@@ -322,6 +323,8 @@
     }
 
     gameStartEl.addEventListener('click', function gameStartHandler() {
+        audio=new Audio('music/WBA Free Track - Junkie.mp3');
+        audio.volume=0.03;
         init();
     });
     document.addEventListener('keydown', function keydownHandler(e) { pressedKeys.add(e.code); });
