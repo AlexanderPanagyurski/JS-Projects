@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Forecaster</title>
-    <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather app</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <div id="content">
-        <div id="request">
-            <input id="location" class='bl' type="text">
-            <input id="submit" class="bl" type="button" value="Get Weather">
-        </div>
-        <div id="forecast" style="display:none">
-            <div id="current">
-                <div class="label">Current conditions</div>
-            </div>
-            <div id="upcoming">
-                <div class="label">Three-day forecast</div>
-            </div>
-        </div>
-    </div>
-    <script type="module" src="./app.js"></script>
+  <div class="app-wrap">
+    <header>
+      <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..." />
+    </header>
+    <main>
+      <section class="location">
+        <div class="city">Northampton, GB</div>
+        <div class="date">Thursday 10 January 2020</div>
+      </section>
+      <div class="current">
+        <div class="temp">15<span>°c</span></div>
+        <div class="weather">Sunny</div>
+        <div class="hi-low">13°c / 16°c</div>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
 </body>
-
 </html>

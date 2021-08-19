@@ -176,7 +176,9 @@
             if (
                 spaceshipEl.classList.contains('spaceship-fire') ||
                 timestamp - gameplay.lastFireBallTimestamp < config.fireInterval
-            ) { return; }
+            ) {
+                return;
+            }
             addFireBall(spaceshipCoordinates.x + 120, spaceshipCoordinates.y + 30);
             gameplay.lastFireBallTimestamp = timestamp;
             spaceshipEl.classList.add('spaceship-fire');
@@ -224,7 +226,7 @@
         configName,
         additionalElementProcessor
     ) {
-        return function(timestamp) {
+        return function (timestamp) {
             if (timestamp - gameplay[gameplayTimestampName] > config[configName]) {
                 const x = gameAreaEl.offsetWidth + elementWidth;
                 const y = utils.randomNumberBetween(0, gameAreaEl.offsetHeight - elementWidth);
@@ -244,14 +246,14 @@
         const fireball = scene.fireBalls.find(fe => utils.hasCollision(fe, asteroidEl));
         if (fireball) {
             fireball.remove();
-            asteroidEl.classList.add("explosion", setTimeout(function() { asteroidEl.remove(); }, 100));
+            asteroidEl.classList.add("explosion", setTimeout(function () { asteroidEl.remove(); }, 100));
 
             gameScoreValueEl.innerText = config.asteroidKillScore + +gameScoreValueEl.innerText;
             return true;
         }
         if (utils.hasCollision(asteroidEl, spaceshipEl)) {
-            asteroidEl.classList.add("explosion", setTimeout(function() { asteroidEl.remove(); }, 100));
-            audio.src="";
+            asteroidEl.classList.add("explosion", setTimeout(function () { asteroidEl.remove(); }, 100));
+            audio.src = "";
             gameOver();
             return true;
         }
@@ -262,13 +264,14 @@
         const fireball = scene.fireBalls.find(fe => utils.hasCollision(fe, enemyEl));
         if (fireball) {
             fireball.remove();
-            enemyEl.classList.add("explosion", setTimeout(function() { enemyEl.remove(); }, 100));
+            enemyEl.classList.add("explosion", setTimeout(function () { enemyEl.remove(); }, 100));
 
             gameScoreValueEl.innerText = config.enemyKillScore + +gameScoreValueEl.innerText;
             return true;
         }
         if (utils.hasCollision(enemyEl, spaceshipEl)) {
-            enemyEl.classList.add("explosion", setTimeout(function() { enemyEl.remove(); }, 100));
+            enemyEl.classList.add("explosion", setTimeout(function () { enemyEl.remove(); }, 100));
+            audio.src = "";
             gameOver();
             return true;
         }
@@ -279,13 +282,14 @@
         const fireball = scene.fireBalls.find(fe => utils.hasCollision(fe, missileEl));
         if (fireball) {
             fireball.remove();
-            missileEl.classList.add("explosion", setTimeout(function() { missileEl.remove(); }, 100));
+            missileEl.classList.add("explosion", setTimeout(function () { missileEl.remove(); }, 100));
 
             gameScoreValueEl.innerText = config.enemyKillScore + +gameScoreValueEl.innerText;
             return true;
         }
         if (utils.hasCollision(missileEl, spaceshipEl)) {
-            missileEl.classList.add("explosion", setTimeout(function() { missileEl.remove(); }, 100));
+            missileEl.classList.add("explosion", setTimeout(function () { missileEl.remove(); }, 100));
+            audio.src = "";
             gameOver();
             return true;
         }
@@ -323,8 +327,8 @@
     }
 
     gameStartEl.addEventListener('click', function gameStartHandler() {
-        audio=new Audio('music/WBA Free Track - Junkie.mp3');
-        audio.volume=0.03;
+        audio = new Audio('music/WBA Free Track - Junkie.mp3');
+        audio.volume = 0.03;
         init();
     });
     document.addEventListener('keydown', function keydownHandler(e) { pressedKeys.add(e.code); });
