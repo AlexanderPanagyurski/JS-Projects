@@ -1,0 +1,199 @@
+/* body {
+    width:100%;
+    height:100%;
+    background-image: url('./images/bg-2.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #38285c;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#game-area {
+    position: relative;
+    background: url('./png/background.png');
+    width: 100%;
+    height: 93vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-start {
+    position: absolute;
+    width: 30%;
+    background-color: rgb(235, 253, 153);
+    border-radius: 30px;
+    top: 100px;
+    left: 35%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+    font-family: 'spaceranger';
+    font-size: 30px;
+}
+
+#game-score {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-title {
+    position: absolute;
+    width: 25%;
+    top: 200px;
+    left: 35%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+    font-size: 90px;
+    color: #E9E9E9;
+} */
+@font-face {
+    font-family: 'Cyberpunk-Regular';
+    src: url('./fonts/Cyberpunks.ttf') format('truetype');
+}
+body,html {
+    margin:0%;
+}
+body *{
+    font-family: 'Cyberpunk-Regular';
+}
+body {
+    font-size: 32px;
+    background-color: #38285c;
+}
+
+#game-area {
+    margin-top:18px;
+    position: relative;
+    width: 100%;
+    height: 93vh;
+    overflow: hidden;
+}
+
+#game-start {
+    position: absolute;
+    width: 30%;
+    background-color: rgb(235, 253, 153);
+    border-radius: 30px;
+    top: 100px;
+    left: 35%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+}
+
+#game-score {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin:0%
+}
+
+.hidden {
+    display: none;
+}
+
+#game-title {
+    position: absolute;
+    width: 25%;
+    top: 200px;
+    margin:0% 33%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+    font-size: 90px;
+    color: #E9E9E9;
+    font-family: 'Cyberpunk-Regular';
+}
+#city {
+    background-position: top;
+}
+#city img {
+    z-index: 50;
+    width:100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#spinner {
+    z-index: 50;
+    position: absolute;
+    width: 140px;
+    height: 56px;
+    background-image: url('./images/spinner.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#spinner.spinner-fire {
+    background-image: url('./images/spinner.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.fire-ball {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    background-image: url('./images/Bullet (1).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.spacestation {
+    z-index: 0;
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    background-image: url('./png/satelite-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.enemy {
+    z-index: 50;
+    position: absolute;
+    width: 140px;
+    height: 56px;
+    background-image: url('./images/enemy-spinner.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.explosion {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('./images/explosion.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#game-over {
+    position: absolute;
+    width: 50%;
+    background-color: red;
+    top: 410px;
+    left: 23%;
+    z-index: 100;
+    text-align: center;
+    padding: 30px;
+}
+
+@font-face {
+    font-family: 'spaceranger';
+    src: url('./space-ranger-font/spaceranger.ttf') format('truetype');
+}
+
+#game-section {
+    font-family: 'spaceranger';
+}
